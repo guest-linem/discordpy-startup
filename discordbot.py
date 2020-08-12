@@ -6,7 +6,8 @@ import datetime
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 bosstime_list = list()
-dt_now = datetime.datetime.now()
+jst_now = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
+dt_now = jst_now.strftime('%Y年%m月%d日 %H:%M:%S')
 
 @bot.event
 async def on_command_error(ctx, error):
